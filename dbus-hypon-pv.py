@@ -285,7 +285,12 @@ class MeasurementMapper:
         return tuple(x.strip() for x in config.get(key, default).split(",") if x.strip())
 
     def map(self, raw: Dict[str, Any]) -> Dict[str, Any]:
-        power = as_float(find_value(raw, self.power_keys), 0.0) or 0.0
+        raw_power = find_value(raw, self.power_keys)
+        power = as_float(raw_power)
+
+        if power is None:
+            raise ValueError("Hypon response did not contain a valid PV power value")
+
         power *= self.power_multiplier
         if abs(power) < self.standby_power:
             power = 0.0
