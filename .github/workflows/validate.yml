@@ -1,0 +1,23 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Python syntax
+        run: python3 -m py_compile dbus-hypon-pv.py
+
+      - name: Check shell syntax
+        run: |
+          sh -n install.sh
+          sh -n restart.sh
+          sh -n uninstall.sh
+          sh -n service/run
+          sh -n service/log/run

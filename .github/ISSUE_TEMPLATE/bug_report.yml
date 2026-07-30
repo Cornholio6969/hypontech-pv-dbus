@@ -1,0 +1,37 @@
+name: Bug report
+description: Report a problem with the service
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: input
+    id: venus
+    attributes:
+      label: Venus OS version
+      placeholder: v3.x
+    validations:
+      required: true
+
+  - type: input
+    id: hardware
+    attributes:
+      label: GX device
+      placeholder: Cerbo GX, Ekrano GX, Raspberry Pi, NanoPi
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe what happened and what you expected.
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Relevant log output
+      render: shell
+    validations:
+      required: true

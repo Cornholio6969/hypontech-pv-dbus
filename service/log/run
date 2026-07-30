@@ -1,0 +1,4 @@
+#!/bin/sh
+SERVICE_NAME="$(basename "$(cd "$(dirname "$0")/../.." && pwd)")"
+mkdir -p "/data/log/$SERVICE_NAME"
+exec multilog t s250000 n10 "/data/log/$SERVICE_NAME"
