@@ -6,6 +6,12 @@ The service polls a Hypon Cloud plant and publishes the inverter on D-Bus as a
 Victron PV inverter. It is intended for Cerbo GX, Ekrano GX and other Venus OS
 devices where the inverter is not connected directly to the GX device.
 
+## Screenshots
+
+<img width="431" height="248" alt="image" src="https://github.com/user-attachments/assets/ac7dc2d2-3f6a-4fb0-87fb-a91bf2590cf4" />
+<img width="843" height="320" alt="image" src="https://github.com/user-attachments/assets/ff00ae7b-5bdd-45d3-83c6-a8819e23f2f8" />
+
+
 ## Features
 
 - Registers as `com.victronenergy.pvinverter.hypon_<device instance>`
